@@ -11,11 +11,11 @@ from TelethonHell.plugins import *
 # -------------------------------------------------------------------------------
 
 ALIVE_TEMP = """
-<b><i>🔥🔥ɦɛʟʟɮօt ɨs օռʟɨռɛ🔥🔥</i></b>
+<b><i>🔥🔥zι∂χ ɨs օռʟɨռɛ🔥🔥</i></b>
 <b><i>↼ Øwñêr ⇀</i></b> : 『 {hell_mention} 』
 ╭──────────────
 ┣─ <b>» Telethon:</b> <i>{telethon_version}</i>
-┣─ <b>» Hêllẞø†:</b> <i>{hellbot_version}</i>
+┣─ <b>» zι∂χ ẞø†:</b> <i>{hellbot_version}</i>
 ┣─ <b>» Sudo:</b> <i>{is_sudo}</i>
 ┣─ <b>» Uptime:</b> <i>{uptime}</i>
 ┣─ <b>» Ping:</b> <i>{ping}</i>
@@ -56,7 +56,7 @@ async def _(event):
     uptime = await get_time((time.time() - StartTime))
     name = gvarstat("ALIVE_NAME") or hell_user
     alive_temp = gvarstat("ALIVE_TEMPLATE") or ALIVE_TEMP
-    a = gvarstat("ALIVE_PIC")
+    a = gvarstat("ALIVE_PIC", "https://te.legra.ph//file/9795c2af2db624961376e.jpg")
     pic_list = []
     if a:
         b = a.split(" ")
@@ -65,7 +65,7 @@ async def _(event):
                 pic_list.append(c)
         PIC = random.choice(pic_list)
     else:
-        PIC = "https://te.legra.ph/file/ea9e11f7c9db21c1b8d5e.mp4"
+        PIC = "https://te.legra.ph//file/9795c2af2db624961376e.jpg"
     end = datetime.datetime.now()
     ping = (end - start).microseconds / 1000
     alive = alive_temp.format(
